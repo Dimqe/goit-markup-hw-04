@@ -44,6 +44,8 @@ p {
 }
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -94,9 +96,25 @@ p {
   color: #2e2f42;
   display: block;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.nav-link.active {
+  position: relative;
+}
+.nav-link.active::after {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.active {
   color: #404bbf;
 }
 .address {
@@ -110,6 +128,7 @@ p {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -133,7 +152,6 @@ p {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  text-align: center;
   margin-bottom: 8px;
 }
 .portfolio-descr {
@@ -141,7 +159,6 @@ p {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  text-align: center;
 }
 .portfolio-name-cont {
   padding: 32px 16px;
@@ -162,6 +179,41 @@ p {
 }
 .portfolio-item {
   width: calc((100% - 48px) / 3);
+  cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  transition: transform 250ms ease-in-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  padding: 8px;
+  background-color: #4d5ae5;
+  color: #fff;
+  font-family: sans-serif;
+}
+.img-cont {
+  position: relative;
+  max-width: auto;
+  max-height: auto;
+  overflow: hidden;
+}
+.text-overlay {
+  padding: 0 32px;
+  text-align: start;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+}
+
+.portfolio-item:hover .overlay {
+  transform: translateY(0);
+}
+.social-link-list:hover .social-link {
+  background-color: #404bbf;
 }
 
 .logo {
@@ -175,7 +227,6 @@ p {
 }
 .footer-logo .logo-part {
   color: #f4f4fd;
-
 }
 .page-footer .footer-logo {
   margin-bottom: 16px;
@@ -189,7 +240,50 @@ p {
   max-width: 264px;
   color: #f4f4fd;
 }
-
+.footer-list{
+  
+}
+.footer-link {
+  display: block;
+  margin-left: 120px;
+}
+.footer-title{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-list-svg{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.footer-item-svg{
+  display: flex;
+  align-items: center;
+}
+.footer-link-svg{
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+.footer-link-svg:hover{
+  background-color: #31d0aa;
+}
+.foter-img-svg {
+  width: 24px;
+  height: 24px;
+}
 
 .page-footer {
   background-color: #2e2f42;
@@ -258,8 +352,19 @@ p {
   letter-spacing: 0.02em;
   color: #434455;
 }
-
-
+.features-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  background-color: #f4f4fd;
+}
+.svg-item {
+  width: 64px;
+  height: 64px;
+}
 
 .team {
   background-color: #f4f4fd;
@@ -305,6 +410,34 @@ p {
   text-align: center;
   color: #434455;
   padding-top: 8px 0;
+  margin-bottom: 8px;
+}
+
+.social-icon {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+.social-item .social-icon {
+  fill: #fff;
+}
+
+.social-item .social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
+
+.social-item {
+  display: flex;
+  gap: 24px;
+  padding: 0 16px;
+  align-items: center;
 }
 
 .services {
@@ -321,8 +454,16 @@ p {
 }
 
 .main-section {
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(/images/people-office\ 1.jpg);
   background-color: #2e2f42;
   padding: 188px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .features-list {
