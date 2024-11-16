@@ -211,14 +211,10 @@ p {
 .portfolio-item:hover .overlay {
   transform: translateY(0);
 }
- .social-link-list:hover .social-link
- {
+.social-link-list .team-link:hover,
+.social-link-list .team-link:focus{
   background-color: #404bbf;
 }
- .social-link-list:focus .social-link{
-  background-color: #404bbf;
- }
-
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -446,7 +442,7 @@ max-width: 264px;
   fill: #f4f4fd ;
 }
 
-.social-item .social-link {
+.social-item .team-link {
   display: flex;
   justify-content: center;
   align-items: center;
