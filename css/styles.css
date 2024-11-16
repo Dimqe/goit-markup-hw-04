@@ -179,37 +179,32 @@ p {
 }
 .portfolio-item {
   width: calc((100% - 48px) / 3);
-  cursor: pointer;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-img {
+  padding: 40px 32px 164px 32px;
+  background-color: #4D5AE5;
+  color: #F4F4FD;
   position: absolute;
-  transition: transform 250ms ease-in-out;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   transform: translateY(100%);
-  padding: 8px;
-  background-color: #4d5ae5;
-  color: #fff;
-  font-family: sans-serif;
-  overflow: hidden;
-  position: relative;
-  max-width: auto;
-  max-height: auto;
+  padding: 40px 32px;
+  letter-spacing: 0.02em;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.text-img {
-  padding: 40px 32px;
-  top:0;
-  text-align: start;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #f4f4fd;
-  background-color: #4d5ae5;
-  width:100%;
-  height:100%;
+.overlay:hover .text-img {
+  transform: translateY(0);
 }
 
 .portfolio-item:hover .overlay {
