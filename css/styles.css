@@ -193,13 +193,12 @@ p {
   background-color: #4d5ae5;
   color: #fff;
   font-family: sans-serif;
-}
-.img-cont {
+  overflow: hidden;
   position: relative;
   max-width: auto;
   max-height: auto;
-  overflow: hidden;
 }
+
 .text-img {
   padding: 40px 32px;
   top:0;
@@ -216,8 +215,8 @@ p {
 .portfolio-item:hover .overlay {
   transform: translateY(0);
 }
-.social-link-list:hover .social-link,
-.social-link-list:focus .social-link {
+.social-link:hover,
+ .social-link:focus {
   background-color: #404bbf;
 }
 
@@ -509,3 +508,5 @@ max-width: 264px;
 .features-item {
   width: calc((100% - 72px) / 4);
 }
+
+
