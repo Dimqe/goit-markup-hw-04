@@ -201,6 +201,7 @@ p {
   padding: 40px 32px;
   letter-spacing: 0.02em;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 1.5; 
 }
 
 .overlay:hover .text-img {
@@ -210,10 +211,13 @@ p {
 .portfolio-item:hover .overlay {
   transform: translateY(0);
 }
-.social-link:hover,
- .social-link:focus {
+ .social-link-list:hover .social-link
+ {
   background-color: #404bbf;
 }
+ .social-link-list:focus .social-link{
+  background-color: #404bbf;
+ }
 
 .logo {
   font-family: "Raleway", sans-serif;
