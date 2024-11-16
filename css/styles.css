@@ -216,7 +216,9 @@ p {
 .portfolio-item:hover .overlay {
   transform: translateY(0);
 }
-.social-link-list:hover .social-link {
+.social-link-list:hover 
+.social-link-list:focus
+.social-link {
   background-color: #404bbf;
 }
 
@@ -292,13 +294,15 @@ align-items: baseline;
 {
   background-color: #31d0aa;
 }
+/*
 .foter-img-svg {
 
   fill: #f4f4fd;
 }
+  */
 
 .footer-list-svg .footer-img-svg{
-  fill: #fff;
+  fill: #f4f4fd;
 }
 
 .page-footer {
