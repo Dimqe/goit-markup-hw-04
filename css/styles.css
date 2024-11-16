@@ -245,10 +245,11 @@ p {
   color: #f4f4fd;
 }
 .footer-list{
-  
+  margin-right: 120px
 }
 .footer-container{
 display: flex;
+align-items: baseline;
 }
 .footer-link {
   display: block;
@@ -259,11 +260,10 @@ display: flex;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 16px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
+
+
 }
 .footer-list-svg{
   display: flex;
@@ -283,13 +283,17 @@ display: flex;
   display: flex;
   align-items: center;
   padding: 8px;
+  transition:  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-link-svg:hover{
+.footer-link-svg:hover,
+.footer-link-svg:hover
+{
   background-color: #31d0aa;
 }
 .foter-img-svg {
   width: 24px;
   height: 24px;
+  fill:  #f4f4fd;
 }
 
 .footer-list-svg .footer-img-svg{
